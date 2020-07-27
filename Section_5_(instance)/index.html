@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app1">
+    <h1 ref='heading'>{{ title }}</h1>
+    <button @click="show" ref="myButton"> Show paragraph</button>
+    <p v-if="showParagraph"></p>
+  </div>
+  <div id="app2">
+    <h1>{{ title }}</h1>
+    <button @click="onChange">Change something in Vue 1</button>
+    <hello></hello>
+    <hello></hello>
+  </div>
+  <div id="app3"></div>
+  <script src="script.js"></script>
+</body>
+</html>

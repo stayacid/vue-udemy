@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../vue.js"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <div id="app">
+    <!-- conditionals -->
+    <p v-if="show">You can see me!</p>
+    <template v-if="show">
+      <h1>Heading</h1>
+      <p>Inside a template</p>
+    </template>  
+    <p v-else="">Now you see me</p>
+    <p v-show="show">Do you also see me?</p>
+    <button @click="show = !show">Switch!</button>
+    <hr>
+    <!-- lists -->
+    <ul>
+      <li v-for="(ingridient, index) in ingridients" :key="ingridient">{{ ingridient }} ({{ index }})</li>
+    </ul>
+    <button @click="ingridients.push('milk')">Add New</button>
+    <button @click="ingridients.pop()">Remove Last</button>
+    <template v-for="(ingridient, index) in ingridients">
+      <h2> {{ ingridient}}</h2>
+      <p> {{ index }}</p>
+    </template>
+    <ul>
+      <li v-for="person in persons">
+        <p v-for="(value, key, i) in person"> {{key}}: {{ value }} ({{i}}) </p>
+      </li>
+    </ul>
+    <span v-for="n in 10">{{n}} </span>
+
+  </div>
+  <script src="index3.js"></script>
+</body>
+</html>
